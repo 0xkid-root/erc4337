@@ -1,0 +1,4 @@
+forge-std/=lib/forge-std/
+@openzeppelin/=lib/openzeppelin-contracts/
+@safe-global/safe-contracts/=lib/safe-smart-account/
+@account-abstraction/=lib/account-abstraction/

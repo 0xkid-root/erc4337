@@ -1,0 +1,1428 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "ExecutionFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidCaller",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidEntryPoint",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidInitialization",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidSignature",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ManagerValidationFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotInitializing",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotPrimarySafe",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UnsupportedEntryPoint",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "selector",
+						"type": "bytes4"
+					}
+				],
+				"name": "UnsupportedExecutionFunction",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "WithdrawNativeFailed",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "version",
+						"type": "uint64"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "OnERC20Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "OnERC20Withdraw",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "safe",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "primarySafe",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "manager",
+						"type": "address"
+					}
+				],
+				"name": "SubAgentModuleSetup",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "WithdrewNative",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "HYPT_FACTORY",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MANAGER_MODULE",
+				"outputs": [
+					{
+						"internalType": "contract SubAgentManagerModule",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PRIMARY_SAFE",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "SAFE",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "SUPPORTED_ENTRYPOINT",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "VERSION",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "domainSeparator",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "domainSeparatorHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ISafe",
+						"name": "safe",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					}
+				],
+				"name": "encodeMessageDataForSafe",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "enum Enum.Operation",
+						"name": "operation",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "safeTxGas",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "baseGas",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "gasToken",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "refundReceiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					}
+				],
+				"name": "encodeTransactionData",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint8",
+						"name": "operation",
+						"type": "uint8"
+					}
+				],
+				"name": "executeUserOp",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint8",
+						"name": "operation",
+						"type": "uint8"
+					}
+				],
+				"name": "executeUserOpWithErrorString",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					}
+				],
+				"name": "getMessageHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ISafe",
+						"name": "safe",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					}
+				],
+				"name": "getMessageHashForSafe",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getModules",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "sender",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "nonce",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "initCode",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "callData",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "accountGasLimits",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "preVerificationGas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "gasFees",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes",
+								"name": "paymasterAndData",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct PackedUserOperation",
+						"name": "userOp",
+						"type": "tuple"
+					}
+				],
+				"name": "getOperationHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "operationHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_entryPoint",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_safe",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_primarySafe",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_manager",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_dataHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidSignature",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC1155BatchReceived",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC1155Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "onERC20Deposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "onERC20Withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "targetContract",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "calldataPayload",
+						"type": "bytes"
+					}
+				],
+				"name": "simulate",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "response",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "tokensReceived",
+				"outputs": [],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "sender",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "nonce",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "initCode",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "callData",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "accountGasLimits",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "preVerificationGas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "gasFees",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes",
+								"name": "paymasterAndData",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct PackedUserOperation",
+						"name": "userOp",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "missingAccountFunds",
+						"type": "uint256"
+					}
+				],
+				"name": "validateUserOp",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "validationData",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawNative",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"ExecutionFailed()": [
+					{
+						"details": "The contract reverts with this error when `executeUserOp` is used instead of bubbling up the original revert data. When bubbling up revert data is desirable, `executeUserOpWithErrorString` should be used instead."
+					}
+				],
+				"InvalidCaller()": [
+					{
+						"details": "This indicates that the module is being used to validate a user operation for a Safe that did not directly call this module."
+					}
+				],
+				"InvalidInitialization()": [
+					{
+						"details": "The contract is already initialized."
+					}
+				],
+				"NotInitializing()": [
+					{
+						"details": "The contract is not initializing."
+					}
+				]
+			},
+			"events": {
+				"Initialized(uint64)": {
+					"details": "Triggered when the contract has been initialized or reinitialized."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"domainSeparator()": {
+					"returns": {
+						"domainSeparatorHash": "The EIP-712 domain separator hash for this contract."
+					}
+				},
+				"encodeMessageDataForSafe(address,bytes)": {
+					"details": "Returns the pre-image of the message hash (see {getMessageHashForSafe}).",
+					"params": {
+						"message": "Message that should be encoded.",
+						"safe": "Safe to which the message is targeted."
+					},
+					"returns": {
+						"_0": "Encoded message."
+					}
+				},
+				"encodeTransactionData(address,uint256,bytes,uint8,uint256,uint256,uint256,address,address,uint256)": {
+					"details": "This method is added to the {CompatibilityFallbackHandler} for backwards compatibility with previous versions of Safe.      For a given Safe, the invariant `getTransactionHash(...) == keccak256(encodeTransactionData(...))` holds true.",
+					"params": {
+						"baseGas": "Base gas costs that are independent of the transaction execution (e.g. base transaction fee, signature check, payment of the refund).",
+						"data": "Data payload of the Safe transaction.",
+						"gasPrice": "Gas price that should be used for the payment calculation.",
+						"gasToken": "Token address (or 0 for the native token) that is used for the payment.",
+						"nonce": "Transaction nonce.",
+						"operation": "Operation type of the Safe transaction: 0 for `CALL` and 1 for `DELEGATECALL`.",
+						"refundReceiver": "Address of receiver of the gas payment (or 0 for `tx.origin`).",
+						"safeTxGas": "Gas that should be used for the Safe transaction.",
+						"to": "Destination address of the Safe transaction.",
+						"value": "Native token value of the Safe transaction."
+					},
+					"returns": {
+						"_0": "Transaction hash pre-image bytes."
+					}
+				},
+				"executeUserOp(address,uint256,bytes,uint8)": {
+					"params": {
+						"data": "Data payload of the user operation.",
+						"operation": "Operation type of the user operation.",
+						"to": "Destination address of the user operation.",
+						"value": "Ether value of the user operation."
+					}
+				},
+				"executeUserOpWithErrorString(address,uint256,bytes,uint8)": {
+					"params": {
+						"data": "Data payload of the user operation.",
+						"operation": "Operation type of the user operation.",
+						"to": "Destination address of the user operation.",
+						"value": "Ether value of the user operation."
+					}
+				},
+				"getMessageHash(bytes)": {
+					"details": "This function assumes that the caller is a Safe contract.",
+					"params": {
+						"message": "Raw message bytes."
+					},
+					"returns": {
+						"_0": "Message hash."
+					}
+				},
+				"getMessageHashForSafe(address,bytes)": {
+					"details": "Returns the hash of a message that can be signed by owners.",
+					"params": {
+						"message": "Message that should be hashed.",
+						"safe": "Safe to which the message is targeted."
+					},
+					"returns": {
+						"_0": "Message hash."
+					}
+				},
+				"getModules()": {
+					"details": "Returns array of first 10 modules.",
+					"returns": {
+						"_0": "Array of modules."
+					}
+				},
+				"getOperationHash((address,uint256,bytes,bytes,bytes32,uint256,bytes32,bytes,bytes))": {
+					"details": "The Safe operation timestamps are pre-pended to the signature bytes as `abi.encodePacked(validAfter, validUntil, signatures)`.",
+					"params": {
+						"userOp": "The ERC-4337 user operation."
+					},
+					"returns": {
+						"operationHash": "Operation hash."
+					}
+				},
+				"initialize(address,address,address,address)": {
+					"params": {
+						"_entryPoint": "Address of the ERC-4337 EntryPoint contract",
+						"_manager": "Address of the SubAgentManagerModule",
+						"_primarySafe": "Address of the primary Safe that controls this sub-agent"
+					}
+				},
+				"isValidSignature(bytes32,bytes)": {
+					"details": "This implementation verifies signatures for a `ISafe(msg.sender)`.",
+					"params": {
+						"_dataHash": "Hash of the data signed.",
+						"_signature": "Signature data."
+					},
+					"returns": {
+						"_0": "The EIP-1271 magic value if the signature is valid, reverts otherwise."
+					}
+				},
+				"onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)": {
+					"returns": {
+						"_0": "Standardized onERC1155BatchReceived return value."
+					}
+				},
+				"onERC1155Received(address,address,uint256,uint256,bytes)": {
+					"returns": {
+						"_0": "Standardized onERC1155Received return value."
+					}
+				},
+				"onERC721Received(address,address,uint256,bytes)": {
+					"returns": {
+						"_0": "Standardized onERC721Received return value."
+					}
+				},
+				"simulate(address,bytes)": {
+					"details": "Internally reverts execution to avoid side effects (making it effectively static).      Catches the internal revert and returns encoded result as bytes.      Inspired by <https://github.com/gnosis/util-contracts/blob/bb5fe5fb5df6d8400998094fb1b32a178a47c3a1/contracts/StorageAccessible.sol>.      ⚠️⚠️⚠️ This function assumes the caller is a Safe contract is only intended for being used as a fallback handler for a {Safe}.      Using it in other ways may cause undefined behavior. ⚠️⚠️⚠️",
+					"params": {
+						"calldataPayload": "Calldata that should be sent to the target contract (encoded method name and arguments).",
+						"targetContract": "Address of the contract containing the code to execute."
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"params": {
+						"interfaceId": "Id of the interface."
+					},
+					"returns": {
+						"_0": "if the interface is supported."
+					}
+				},
+				"tokensReceived(address,address,address,uint256,bytes,bytes)": {
+					"details": "Account that wishes to receive the tokens also needs to register the implementer (this contract) via the ERC-1820 interface registry.      From the standard: \"This is done by calling the setInterfaceImplementer function on the ERC-1820 registry with the holder address as      the address, the keccak256 hash of ERC777TokensSender (0x29ddb589b1fb5fc7cf394961c1adf5f8c6454761adf795e67fe149f658abe895) as the      interface hash, and the address of the contract implementing the ERC777TokensSender as the implementer.\""
+				},
+				"validateUserOp((address,uint256,bytes,bytes,bytes32,uint256,bytes32,bytes,bytes),bytes32,uint256)": {
+					"details": "Combines Safe's native signature validation with manager permission validation",
+					"params": {
+						"missingAccountFunds": "Amount of funds missing for the operation",
+						"userOp": "The user operation to validate"
+					},
+					"returns": {
+						"validationData": "Validation result (0 = valid, 1 = invalid, or packed time range)"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"ExecutionFailed()": [
+					{
+						"notice": "An error indicating that the user operation failed to execute successfully."
+					}
+				],
+				"InvalidCaller()": [
+					{
+						"notice": "An error indicating that the caller does not match the Safe in the corresponding user operation."
+					}
+				],
+				"InvalidEntryPoint()": [
+					{
+						"notice": "An error indicating that the entry point used when deploying a new module instance is invalid."
+					}
+				],
+				"UnsupportedEntryPoint()": [
+					{
+						"notice": "An error indicating that the call validating or executing a user operation was not called by the supported entry point contract."
+					}
+				],
+				"UnsupportedExecutionFunction(bytes4)": [
+					{
+						"notice": "An error indicating that the user operation `callData` does not correspond to one of the two supported execution functions: `executeUserOp` or `executeUserOpWithErrorString`."
+					}
+				]
+			},
+			"kind": "user",
+			"methods": {
+				"SUPPORTED_ENTRYPOINT()": {
+					"notice": "The address of the EntryPoint contract supported by this module."
+				},
+				"domainSeparator()": {
+					"notice": "Computes the 32-byte domain separator used in EIP-712 signature verification for Safe operations."
+				},
+				"encodeTransactionData(address,uint256,bytes,uint8,uint256,uint256,uint256,address,address,uint256)": {
+					"notice": "Returns the pre-image of the Safe transaction hash (see {Safe.getTransactionHash})."
+				},
+				"executeUserOp(address,uint256,bytes,uint8)": {
+					"notice": "Executes a user operation provided by the entry point."
+				},
+				"executeUserOpWithErrorString(address,uint256,bytes,uint8)": {
+					"notice": "Executes a user operation provided by the entry point and returns error message on failure."
+				},
+				"getMessageHash(bytes)": {
+					"notice": "Returns the hash of a message to be signed by owners."
+				},
+				"getOperationHash((address,uint256,bytes,bytes,bytes32,uint256,bytes32,bytes,bytes))": {
+					"notice": "Returns the 32-byte Safe operation hash to be signed by owners for the specified ERC-4337 user operation."
+				},
+				"initialize(address,address,address,address)": {
+					"notice": "Constructor sets up the module with references to primary safe and manager"
+				},
+				"isValidSignature(bytes32,bytes)": {
+					"notice": "Implementation of the EIP-1271 signature validation method."
+				},
+				"onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)": {
+					"notice": "Handles ERC-1155 Token batch callback."
+				},
+				"onERC1155Received(address,address,uint256,uint256,bytes)": {
+					"notice": "Handles ERC-1155 Token callback."
+				},
+				"onERC721Received(address,address,uint256,bytes)": {
+					"notice": "Handles ERC-721 Token callback."
+				},
+				"simulate(address,bytes)": {
+					"notice": "Performs a `DELEGATECALL` to a `targetContract` in the context of self."
+				},
+				"supportsInterface(bytes4)": {
+					"notice": "Implements ERC-165 interface support for ERC1155TokenReceiver, ERC721TokenReceiver and IERC165."
+				},
+				"tokensReceived(address,address,address,uint256,bytes,bytes)": {
+					"notice": "Handles ERC-777 Token callback."
+				},
+				"validateUserOp((address,uint256,bytes,bytes,bytes32,uint256,bytes32,bytes,bytes),bytes32,uint256)": {
+					"notice": "Validates a user operation (ERC-4337 required function)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/SubAgentModule.sol": "SubAgentModule"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": [
+			":@account-abstraction/=lib/account-abstraction/",
+			":@openzeppelin/=lib/openzeppelin-contracts/",
+			":@safe-global/safe-contracts/=lib/safe-smart-account/",
+			":forge-std/=lib/forge-std/"
+		]
+	},
+	"sources": {
+		"lib/account-abstraction/contracts/core/Helpers.sol": {
+			"keccak256": "0x42b948af5fa14a96149611595df1186800c7558b2de8762e4b45a7c45c16f65e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://737a7908131ece48a5df1faaa3d0be79c42792379c27f5615dae6aa14cd68c2f",
+				"dweb:/ipfs/QmPAxGMDxuek7XWSUVfZpvYE8bustfsjTDVDK8hmE88e1f"
+			]
+		},
+		"lib/account-abstraction/contracts/core/UserOperationLib.sol": {
+			"keccak256": "0x2d3450fa3906422b6fdbbe7f2a2a9e36d6f3751bfa9cd80af88befd6a5be78c1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://292a0ef5295d7f2016e99d2c228958f7f6de94f5bd9652d8696af15af0094a99",
+				"dweb:/ipfs/QmVg4fhkZbUB7AopGcaVPmTdvChq7W9ga8fjrc3XaJNTM2"
+			]
+		},
+		"lib/account-abstraction/contracts/interfaces/IAccount.sol": {
+			"keccak256": "0x1030b464b49ce80da46b5b6c9af357c2d526f308de61391db6a4ec767d33b864",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://671945f8e18e7305797312b5a209506be3c9bd1d9b9b561c1e8863bccfa61319",
+				"dweb:/ipfs/QmVanLK5Aenrb7J94doiE1C9oHwo86jvv8NrpDeNHwvnii"
+			]
+		},
+		"lib/account-abstraction/contracts/interfaces/PackedUserOperation.sol": {
+			"keccak256": "0xb15188e25e45fe73097e279675b6c0beccbd4133ead2260f8f0c4ba840046800",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d14c1edd1e95d37c26e54bb34305e2cc9dedc46eb75ec91caeb777678e8ea79",
+				"dweb:/ipfs/QmcCL2syVtV7W3XvYx3si84MPkbEJKqEN8hjFNhAPoDDhK"
+			]
+		},
+		"lib/safe-smart-account/contracts/handler/CompatibilityFallbackHandler.sol": {
+			"keccak256": "0x0dd4a20f44fe8c4d86a78aa5ae0f22199d3e379d6951d3ce5c1091e6cf62a993",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://9408d2116e7faf70df894553b99b4c791c442625ff1fe9a5c26fc0b324ba269b",
+				"dweb:/ipfs/QmPnpJtaPi18rapoUWdjYgExRgkbWYySYuPqEmc5oUiiCE"
+			]
+		},
+		"lib/safe-smart-account/contracts/handler/HandlerContext.sol": {
+			"keccak256": "0xc2c82b04d51d951e2b2daa6558acf8f34db6f9ec2353ade11e5dd5fab7e681fc",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://78d7f3c87c73ba4f692451745a0f1145c3e4fc63517a1115b1cebd2e7d016ca8",
+				"dweb:/ipfs/QmSmiyEgN3q9mTpYCiny7je9Xg7RBitGC2z9iHcLfSHKkf"
+			]
+		},
+		"lib/safe-smart-account/contracts/handler/TokenCallbackHandler.sol": {
+			"keccak256": "0xd5c0df33c632dd0679d984dedcfdc9d25072f6aeab9fcaed051d9f5ae3a73cb8",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://dcc6f6cce4551d14290a09e5468ae267bafcaba2715b918f3092d088015feab5",
+				"dweb:/ipfs/QmX6pVs78DifrDpJNo4Kd5koCzjPxArq9jtMchCDyKCy7N"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/ERC1155TokenReceiver.sol": {
+			"keccak256": "0x87e62665c041cade64e753ecdccf931cb100ab6e4bcc98769c1e6474be9db493",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://59ca1157dcfe19c72b9d1244a6ae5ec70fee9793d4d8af523b70f22ae567d55c",
+				"dweb:/ipfs/QmfE3kv73QuQWAWQND927LWVHVLCp19m1mLUvxVYJDEFZM"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/ERC721TokenReceiver.sol": {
+			"keccak256": "0x96c4c5457fede2d4c6012011dfda36f8e8ffdb7388468f2dddb35661538bf479",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://99a54737bc23722f79ec9cf9de63ba35b556a61df453eb332f3cac783503f26c",
+				"dweb:/ipfs/QmbLW5C2RhoLbwDWEPtTKpyYE5apT9B3q4U11PZG3wSM1n"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/ERC777TokensRecipient.sol": {
+			"keccak256": "0x32ca7f1610659f35e52f5a989e1d844b7847ad57fab06e0cae5bc027248536ac",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://9082896ec697e320087b1a682b69a5cdf71b33a2f7a956e2fb6054f9f9d56d06",
+				"dweb:/ipfs/QmUu7iNkQNvvqBPbbxuhqiQpYPYYnfsyPEsf4AMQFANXFZ"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/IERC165.sol": {
+			"keccak256": "0x779ed3893a8812e383670b755f65c7727e9343dadaa4d7a4aa7f4aa35d859fdb",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://bb2039e1459ace1e68761e873632fc339866332f9f5ecb7452a0bc3a3b847e89",
+				"dweb:/ipfs/QmYXvDQXJnDkXFvsvKLyZXaAv4x42qvtbtmwHftP4RKX38"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/IFallbackManager.sol": {
+			"keccak256": "0xa8de18145d58930b4cb774e47cac4e91fb318c633b0cc0a219c4aeebe10dabaf",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://920348747b3bfe596cd8c0e214110b47936d5e5fea5e79533846b31c25ea1eac",
+				"dweb:/ipfs/QmUWHrbEQ7ES7JZ5CSBx86Bw5MvfdDEE4jtiiJzRXBD5dM"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/IGuardManager.sol": {
+			"keccak256": "0xca10c744bd853f69f3c63282a2560462085a253c6034f108f97a575ec2fd61ab",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://2dc7168a23df7c619762fdd1c315560b091761ab93acca60d3e8a53a9cf07f3e",
+				"dweb:/ipfs/QmULbk2n7J2BUwpQFt27Gah39vQpUFmcfTXGbBj73Mpy9y"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/IModuleManager.sol": {
+			"keccak256": "0xe6350c0a0aaa720ed61f73cfc3e43d4fd9842b1d9fca066002c56f9efa0dcc8d",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://123f73ca53e5d4e38c81b263f115b7a2c50f72886597b66ad2c146298c6c90d9",
+				"dweb:/ipfs/QmfP7z2ExijhDJfy2Ki1GA2c7LGM5BtV6j9hqL2xHSh8BM"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/INativeCurrencyPaymentFallback.sol": {
+			"keccak256": "0xb5cd1ba8eecb1bba9551547c8a2e93749ebe3d22ba62bf5e17f75799178b828e",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://a83883bb9c4061133d5aab39e4a4000e776e2558b4ccaa8c630d2cca1f82ee41",
+				"dweb:/ipfs/QmVn6tSex8iaWDQMg7yokat9WhqE5qu2TtgPsP2WAKdpwt"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/IOwnerManager.sol": {
+			"keccak256": "0x15ace68117246f2292d050b2ef4b38584c47eebc71bce386ae76de9d81e6fda8",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://8e30343ae87dd9df8b8e1346db4674014c083ec1622dea5f58a0775888ac7fee",
+				"dweb:/ipfs/QmS4FJ7JAD7JGyAbUWRa9mZcFWrDFaj8ACZbjFRzSziYvu"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/ISafe.sol": {
+			"keccak256": "0x65f706f2bc3568927b841f8b1afbc4f814e1d2c58333153d81577c7b73e531d0",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://816796334a3b19cc34ddda7c7e393b72095161c4f98fe983e300d6f834b10a7f",
+				"dweb:/ipfs/QmRFtzyUaNXJeeFnkWMay72zKG27ccjmAvAfMQULZqEgjm"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/ISignatureValidator.sol": {
+			"keccak256": "0x123b8d95c7beca245ac8d5f11530b7765768ab864a782453bf52f6da9ecfd6a4",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://b3f5e14a7449065e076e56a11cd1e1b40cff63385c3d660d378956a0240e2d29",
+				"dweb:/ipfs/QmXwkdzBJXnEaxjhQWxsxQtmk5qyDzBPcHcyJRPVXhwvAp"
+			]
+		},
+		"lib/safe-smart-account/contracts/interfaces/IStorageAccessible.sol": {
+			"keccak256": "0x0a06ff2bcca70a1a5926aa71473a515e073b85f217fd3c8594e922880758db1c",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://41ee6f1d043a6d021d98eb9e97aa728fe401bfddb6ccbd3502a8394a190c89db",
+				"dweb:/ipfs/QmaDAi6w52tsbXBDtDRUdkHS1n8B2YVhkwesiw7zHp5XEE"
+			]
+		},
+		"lib/safe-smart-account/contracts/libraries/Enum.sol": {
+			"keccak256": "0x443e310b464e7580bb2fd50e3a2d323efbbfa53e2433832eec509e127ecd6261",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://157e5965acf507aa5f0fd50c2855a489a773cae99ca03ca7479a7ea3986badde",
+				"dweb:/ipfs/QmaVyMAw8a6oaSR2aDw5U7JbW76qkunpqFfZn5pTD5pjvD"
+			]
+		},
+		"src/SubAgentManagerModule.sol": {
+			"keccak256": "0x0fb2a312436a98ae87ef1f79294ddbfda1e46760c8f1f2f9e264ad3f05c8eeda",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4884af5507724081067e16c0a39ea3e64beb0ff87962d84b0ebe9f771e47be28",
+				"dweb:/ipfs/QmeyH2hdos16WfyuuPjZvbz2orK5mSFWFdBQ6kv5XAq4X2"
+			]
+		},
+		"src/SubAgentModule.sol": {
+			"keccak256": "0x9a8be36fb4d8794b97ac656530dbdf36ec0a2ef80232b955bc33829a79e8b4c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ea66ec2fde1c620ebe92d9fccd3206e28ccd627a003a082fc301f03badc99249",
+				"dweb:/ipfs/QmVVxTgWQF8vJd5juVpZ8i22V4tkYZ5WQPRPn9E8Ug5kMZ"
+			]
+		},
+		"src/external/ISafe.sol": {
+			"keccak256": "0x37a15d9f5e8a5bf873a1f0d151ddd3fd235ef838ff010fd66e7f2fe400f03937",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://3d18593c30c08fef10015b58f4bf6d8fcce8a5fa2693a64f3c3fc49c6f034ad0",
+				"dweb:/ipfs/QmYjt3bd7JJZtLemndawWxaYdmXnsaUppKT551DXrEjV3E"
+			]
+		},
+		"src/external/Initializable.sol": {
+			"keccak256": "0xc0369f54b0b2116aaf97045c48357f9c1d79595d4245ab66eec3979588528401",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://50662d940cb5b12c647128a506172fba29e487ab4791dbbf56818fe9a22a2717",
+				"dweb:/ipfs/QmRTMmR5xnhiphimzs2PT3LExawvqKRBqb6ZeCQjbEWQUE"
+			]
+		},
+		"src/external/Safe4337Module.sol": {
+			"keccak256": "0xe9053a4de028f526416802cd8e5995fbefa421759badcc90d7f8f131a7767a09",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://22178fb6784df799685ee4e57587487e87fb132230e87af2370b5715cd27e3ed",
+				"dweb:/ipfs/QmQWPCSfAcEb3aHMdtiBUJvHnKvMnn1aohMi8QoD74Eai5"
+			]
+		},
+		"src/external/SafeERC20.sol": {
+			"keccak256": "0xf4250fbec3428a2b4e331175d34e1008a735a1b5ad192ce8111a8eda6370fe8d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://74c3a9137bdc637bfdde79b23a46b9e3f317ea762cc4e5e9efba42fdfc8f3e4b",
+				"dweb:/ipfs/QmRuhvzNtStLu6praJMxVN7n5J4D9i2rrbpCgZ4RdK6R4y"
+			]
+		},
+		"src/interfaces/IERC20.sol": {
+			"keccak256": "0xe74e540dc0964bb1715e2d552195cd0063b04d0cdd6823bb43689a70f46456e7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb0ea24b703b1c5a10bfc0283b7b89fc52a6672dd2da2773e4ca002976dc9664",
+				"dweb:/ipfs/QmTN1CDrChAuJmfUL52NuVricRcA1Xp29DWhFyCzKfDBkY"
+			]
+		},
+		"src/interfaces/IHyptFactory.sol": {
+			"keccak256": "0x1ecad86b85f63ca68f17805cb91ca096ededd8ed4946f65ca740ad6f0939c04c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2ce87e442afa026c19e0fbfbbf7a3e223b87d1871ea1c637e6c6455c0180f5a7",
+				"dweb:/ipfs/QmRS1V4ne5SmnLkfRNMWDc2ZZp7bShE2FndpgpQd94dsQY"
+			]
+		},
+		"src/interfaces/ISubAgentManagerModule.sol": {
+			"keccak256": "0xf895d4d0dbba641f0172dc5809e821e4a6a1e69ea41079de1fd8bc53c2c950d2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59e6377d9cbc9ecca399820a37d732ea912fb487c32ef49f8418dd847804e187",
+				"dweb:/ipfs/QmXAfr6YZ62nz6XHxPcbttoEqytjc4TZZ2KMNi4THS9H7K"
+			]
+		},
+		"src/interfaces/ISubAgentModule.sol": {
+			"keccak256": "0x942bdc6ad791d9989468e56b6951fb85cb7bc1deeeccf90234c56c4ae84e3027",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bcd7da011e7a0fcce205b34732342a6e4e329b96a787c0cdf19638661561c752",
+				"dweb:/ipfs/QmUAs6bge4QAq2Y2v2B6WmKVp1ptcS6s1yNpe3WWmjZEsb"
+			]
+		},
+		"src/libraries/CalldataDecoder.sol": {
+			"keccak256": "0x16ccb35951f62452e575a4506795506a1b1b69ab5d28f3a103b540e162852d06",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://efb116b4b41136ec7d553e0f47a0b3e401d10ed39c66fb40f27d153d4f56dcf4",
+				"dweb:/ipfs/QmdbfEbWTYqqv5Sathxz5v4ejZTTZf7XXyww9H4KbRBZn2"
+			]
+		}
+	},
+	"version": 1
+}
